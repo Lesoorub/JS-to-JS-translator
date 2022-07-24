@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function OnClick(){
+                document.getElementById("result").innerText = compile(document.getElementById("source").value.trim())
+            }
+        </script>
+        <style>
+            textarea {
+                width: 100%;
+                height: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>source</h3>
+            <textarea id="source"></textarea>
+        </div>
+        <br>
+        <button onclick="OnClick()">
+            Compile
+        </button>
+        <div>
+            <h3>result</h3>
+            <textarea readonly="true" id="result"></textarea>
+        </div>
+        <button onclick="eval(document.getElementById('result').value)">
+            Run
+        </button>
+        <script src="script.js"></script>
+        <script>
+            document.getElementById("source").value = "alert(1)"
+            OnClick();
+        </script>
+    </body>
+</html>
